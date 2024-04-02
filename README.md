@@ -32,4 +32,6 @@ Ao final do projeto, irei disponibilizar o software para o pessoal utilizar e ve
 - RF04: O sistema deve permitir que o usuário mantenha seus cartões de crédito
 - RF05: O sistema deve permitir que o usuário mantenha suas contas
 - RF06: O sistema deve gerar um relatório referente as transações ocorridas no período que o usuário escolher
-- RF07: 
+- RF07: O sistema deve gerar um gráfico com as porcetagens de verba por cada categoria
+- RF08: O sistema deve gerar um gráfico com a timeline dos gastos/receitas ao longo dos meses
+
