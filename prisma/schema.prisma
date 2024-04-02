@@ -1,0 +1,94 @@
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id       String @id @default(uuid()) @db.VarChar(80)
+    name     String @db.VarChar(100)
+    email    String @unique @db.VarChar(100)
+    password String @db.VarChar(100)
+
+    account     Account[]
+    credit_card CreditCard[]
+    Transaction Transaction[]
+
+    @@map("user")
+}
+
+model Account {
+    id          Int    @id @default(autoincrement())
+    name        String @db.VarChar(100)
+    color       String @db.VarChar(50)
+    user_id     String @db.VarChar(80)
+    category_id Int
+
+    user        User          @relation(fields: [user_id], references: [id], onDelete: Cascade)
+    category    Category      @relation(fields: [category_id], references: [id])
+    credit_card CreditCard[]
+    Transaction Transaction[]
+
+    @@map("account")
+}
+
+model CreditCard {
+    id           Int    @id @default(autoincrement())
+    name         String @db.VarChar(100)
+    limit        Float
+    due_date     Int
+    closing_date Int
+    bank_name    String @db.VarChar(100)
+    user_id      String @db.VarChar(80)
+    account_id   Int
+
+    user        User          @relation(fields: [user_id], references: [id], onDelete: Cascade)
+    account     Account       @relation(fields: [account_id], references: [id])
+    transaction Transaction[]
+
+    @@map("credit_card")
+}
+
+model Category {
+    id            Int           @id @default(autoincrement())
+    name          String        @db.VarChar(100)
+    color         String        @db.VarChar(50)
+    icon          String        @db.VarChar(50)
+    is_active     Boolean
+    category_type CategoryType
+    account       Account[]
+    Transaction   Transaction[]
+
+    @@map("category")
+}
+
+enum CategoryType {
+    balance
+    expanse
+}
+
+model Transaction {
+    id             Int             @id @default(autoincrement())
+    description    String          @db.VarChar(200)
+    value          Float
+    creation_date  DateTime        @db.Timestamp()
+    paid_date      DateTime?       @db.Timestamp()
+    type           TransactionType
+    was_paid       Boolean
+    credit_card_id Int
+    category_id    Int
+    user_id        String
+    account_id     Int
+
+    credit_card CreditCard @relation(fields: [credit_card_id], references: [id])
+    category    Category   @relation(fields: [category_id], references: [id])
+    user        User       @relation(fields: [user_id], references: [id],onDelete: Cascade)
+    account     Account    @relation(fields: [account_id], references: [id],onDelete: Cascade)
+
+    @@map("transation")
+    @@index([creation_date(sort: Desc)])
+}
+
+enum TransactionType {
+    balance
+    expanse
+}
