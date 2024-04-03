@@ -10,3 +10,17 @@ export class CreateUserDto{
     email:string;
     password:string;
 }
+
+export class AuthUserResDto{
+    user: {
+        id:string,
+        name: string,
+        email: string
+    }
+    token: string
+}
+
+export class AuthUserDto{
+    email:string;
+    password:string;
+}

@@ -1,4 +1,4 @@
-import { CreateUserDto } from "../dto/user";
+import { AuthUserDto, CreateUserDto } from "../dto/user";
 import { invalidBodyError } from "../error";
 import { UserService } from "../service";
 import { H3Event } from 'h3'
@@ -14,5 +14,17 @@ export class UserController {
         const newUser = await this.userService.createUser({ email, name, password })
         const { password: _, ...user } = newUser
         return handlerResponse(event, 200, user)
+    }
+
+    async auth(event: H3Event) {
+        const { email, password }: AuthUserDto = await readBody(event)
+        if (email === undefined || password === undefined) throw invalidBodyError();
+        const auth = await this.userService.auth({ email, password })
+        setCookie(event, 'token', auth.token)
+        setCookie(event, 'user', JSON.stringify({
+            email: auth.user.email,
+            id: auth.user.id
+        }))
+        return handlerResponse(event, 201, auth)
     }
 }
