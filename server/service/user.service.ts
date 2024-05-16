@@ -1,6 +1,6 @@
 import { AuthUserDto, AuthUserResDto, CreateUserDto } from "../dto/user";
 import { badRequestError, notFoundError } from "../error";
-import { UserRepository } from "../repository/user.repository";
+import { UserRepository } from "../repository/user.repo";
 import { hashPassword } from "../util";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
@@ -37,5 +37,11 @@ export class UserService{
         }
 
         return tokenRes
+    }
+
+    async getAll(){
+        const users = await this.userRepo.getAll()
+        if(users.length === 0) throw notFoundError("Nenhum usuário registrado!")
+        return users
     }
 }

@@ -67,8 +67,8 @@ model Category {
 }
 
 enum CategoryType {
-    balance
-    expanse
+    spend
+    saving
 }
 
 model Transaction {
@@ -94,6 +94,6 @@ model Transaction {
 }
 
 enum TransactionType {
-    balance
-    expanse
+    spend
+    saving
 }

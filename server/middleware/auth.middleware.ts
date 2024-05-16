@@ -1,13 +1,13 @@
 import jwt from "jsonwebtoken";
-import { prisma } from '../util'
+import { prisma } from '../config'
 import { unauthorizedError } from "../error";
 
 type JWToken = {
     id: string
 }
 export default defineEventHandler(async (event) => {
-    const pathDontNeedMiddleware = ['/api/auth', '/api/users', '/api/auth/', '/api/users/','/api/auth/verify']
-
+    const pathDontNeedMiddleware = ['/api/auth', '/api/auth/','/api/auth/verify']
+    
     if (!event.path.includes('/api/') || (pathDontNeedMiddleware.includes(event.path) && event.method == 'POST')) return
 
     const { authorization } = event.node.req.headers
