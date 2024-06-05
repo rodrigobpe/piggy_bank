@@ -1,7 +1,7 @@
-declare module 'h3'{
-    interface H3Event{
-        id:string
+declare module 'h3' {
+    interface H3Event {
+        id: string
     }
 }
 
-export default{}
+export default {}
