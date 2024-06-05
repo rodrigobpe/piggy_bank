@@ -10,13 +10,18 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "@prisma/client": "^5.13.0",
+    "apexcharts": "^3.49.1",
     "bcrypt": "^5.1.1",
     "jsonwebtoken": "^9.0.2",
     "nuxt": "^3.11.1",
+    "pinia": "^2.1.7",
     "sass": "^1.72.0",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue3-apexcharts": "^1.5.3",
+    "vuetify-nuxt-module": "^0.14.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
