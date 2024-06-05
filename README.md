@@ -6,14 +6,7 @@
 - [Requisitos do sistema](#requisitos-funcionais)
 
 ### Justificativa
-Este projeto tem como objetivo finalizar o TCC (Trabalho de conclusão de curso) e aprimorar meus conhecimentos em Nuxt.js, utilizando _SSR_ (_Server side rendering_). Será desenvolvido um aplicativo _web_ para auxiliar os usuários a organizar suas finanças pessoais. O software também irá contar com um design responsivo, facilitando o acesso pelo celular.
-
-Ao final do projeto, irei disponibilizar o software para o pessoal utilizar e verificar algumas questões de usabilidade como: 
-- O software atende a necessidade?
-- É fácil de utilizar?
-- O design é agradavel?
-- Após essa primeira experiência, você pretende continuar usando o software?
-- Encontrou algum defeito/bug no sistema?
+Inicialmente este projeto começou sendo uma proposta de TCC, todavia neste exato momento surgiu como uma oportunida de aprimorar meus aprimorar meus conhecimentos em Nuxt.js, utilizando _SSR_ (_Server side rendering_). Será desenvolvido um aplicativo _web_ para auxiliar os usuários a organizar suas finanças pessoais. O software também irá contar com um design responsivo, facilitando o acesso pelo celular.
 
 ### Funcionalidades
 - Cadastrar usuário
