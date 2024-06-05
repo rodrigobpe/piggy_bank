@@ -6,7 +6,7 @@
 - [Requisitos do sistema](#requisitos-funcionais)
 
 ### Justificativa
-Inicialmente este projeto começou sendo uma proposta de TCC, todavia neste exato momento surgiu como uma oportunida de aprimorar meus aprimorar meus conhecimentos em Nuxt.js, utilizando _SSR_ (_Server side rendering_). Será desenvolvido um aplicativo _web_ para auxiliar os usuários a organizar suas finanças pessoais. O software também irá contar com um design responsivo, facilitando o acesso pelo celular.
+Inicialmente este projeto começou sendo uma proposta de TCC, todavia neste exato momento surgiu como uma oportunidade de aprimorar meus aprimorar meus conhecimentos em Nuxt.js, utilizando _SSR_ (_Server side rendering_). Será desenvolvido um aplicativo _web_ para auxiliar os usuários a organizar suas finanças pessoais. O software também irá contar com um design responsivo, facilitando o acesso pelo celular.
 
 ### Funcionalidades
 - Cadastrar usuário
